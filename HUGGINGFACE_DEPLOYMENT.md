@@ -1,4 +1,49 @@
-# Free Backend Deployment on Hugging Face Spaces
+# Hugging Face Spaces Note
+
+The current Hugging Face Spaces UI requires a paid plan for Docker and Gradio
+Spaces. Static Spaces are free, but they cannot run this FastAPI/TensorFlow
+backend. Do not select the Static option for the API.
+
+For a free-tier backend alternative, use Google Cloud Run as documented below.
+
+## Google Cloud Run
+
+Cloud Run has a free monthly usage tier, but Google requires a billing account.
+You can set a maximum instance count and budget alert to control usage.
+
+1. Install the Google Cloud CLI and run `gcloud auth login`.
+2. Create or select a Google Cloud project with billing enabled.
+3. From the repository root, run:
+
+  ```bash
+  gcloud builds submit --tag gcr.io/YOUR_PROJECT_ID/suraksha-api
+  gcloud run deploy suraksha-api `
+    --image gcr.io/YOUR_PROJECT_ID/suraksha-api `
+    --region us-central1 `
+    --platform managed `
+    --allow-unauthenticated `
+    --memory 2Gi `
+    --cpu 2 `
+    --max-instances 1 `
+    --set-env-vars SKIP_PRECOMPUTE=true,FRONTEND_URL=https://YOUR_FRONTEND.vercel.app
+  ```
+
+  In PowerShell, use backticks as shown for line continuation, or put the
+  deploy command on one line.
+
+4. Copy the Cloud Run URL and set this Vercel variable:
+
+  ```text
+  VITE_API_URL=https://your-cloud-run-url
+  ```
+
+5. Redeploy the frontend, then update `FRONTEND_URL` on Cloud Run with the
+  final Vercel URL.
+
+Cloud Run may charge for usage above its free tier. Set a Google Cloud budget
+alert and keep `--max-instances 1` enabled.
+
+## Previous Spaces Instructions
 
 This project includes a root `Dockerfile` for running the FastAPI and
 TensorFlow backend as a Docker Space. The frontend can remain on Vercel.
