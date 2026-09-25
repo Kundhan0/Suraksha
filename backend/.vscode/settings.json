@@ -1,0 +1,13 @@
+{
+    "python.defaultInterpreterPath": "python",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": false,
+    "python.formatting.provider": "black",
+    "python.autoComplete.dataSourcemode": "Local",
+    "python.terminal.executeInFileProperties": false,
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "css",
+        "*.js": "javascript"
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "sources": {
+    "country": ["countries.geojson", "india/country.geojson"],
+    "state": ["india/states.geojson"],
+    "district": ["india/districts.geojson"],
+    "subdistrict": ["india/subdistricts.geojson"],
+    "village": ["india/villages.geojson"],
+    "locality": ["india/localities.geojson", "india/wards.geojson"],
+    "neighbourhood": ["india/neighbourhoods.geojson", "india/hamlets.geojson"]
+  }
+}

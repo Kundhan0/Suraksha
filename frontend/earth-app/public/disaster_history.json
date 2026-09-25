@@ -1,0 +1,132 @@
+{
+  "vadodara": {
+    "floods": [
+      {
+        "year": 2019,
+        "date": "2019-07-31",
+        "type": "Flood",
+        "severity": "Extreme",
+        "description": "Severe flooding in Vadodara after heavy rainfall of 410mm in 24 hours. Vishwamitri river overflowed.",
+        "affected_villages": [
+          "Alampura",
+          "Ranapur",
+          "Kanabha",
+          "Dhansala"
+        ],
+        "casualties": 2,
+        "displaced": 150000
+      },
+      {
+        "year": 2014,
+        "date": "2014-09-22",
+        "type": "Flood",
+        "severity": "High",
+        "description": "Flooding after 300mm rainfall. Low-lying areas of Vadodara city inundated.",
+        "affected_villages": [
+          "Karjan",
+          "Padra",
+          "Savli"
+        ],
+        "casualties": 0,
+        "displaced": 50000
+      },
+      {
+        "year": 2006,
+        "date": "2006-07-05",
+        "type": "Flood",
+        "severity": "High",
+        "description": "Vishwamitri river flooding after intense monsoon rainfall.",
+        "affected_villages": [
+          "Dabhoi",
+          "Sinor",
+          "Vaghodia"
+        ],
+        "casualties": 5,
+        "displaced": 75000
+      },
+      {
+        "year": 2005,
+        "date": "2006-06-20",
+        "type": "Flood",
+        "severity": "Moderate",
+        "description": "Moderate flooding in rural areas after continuous rainfall.",
+        "affected_villages": [
+          "Desar",
+          "Karjan"
+        ],
+        "casualties": 0,
+        "displaced": 10000
+      }
+    ],
+    "cloudbursts": [
+      {
+        "year": 2019,
+        "date": "2019-07-31",
+        "type": "Cloudburst",
+        "severity": "Extreme",
+        "description": "Cloudburst event over Vadodara recorded 410mm rainfall in 24 hours.",
+        "location": "Vadodara urban area",
+        "rainfall_mm": 410
+      },
+      {
+        "year": 2015,
+        "date": "2015-06-25",
+        "type": "Cloudburst",
+        "severity": "High",
+        "description": "Intense rainfall event of 280mm in 24 hours near Dabhoi.",
+        "location": "Dabhoi",
+        "rainfall_mm": 280
+      },
+      {
+        "year": 2011,
+        "date": "2011-09-10",
+        "type": "Cloudburst",
+        "severity": "Moderate",
+        "description": "Heavy rainfall of 195mm in 24 hours affecting Padra and surrounding areas.",
+        "location": "Padra",
+        "rainfall_mm": 195
+      }
+    ]
+  },
+  "guwahati": {
+    "floods": [
+      {
+        "year": 2019,
+        "date": "2019-07-08",
+        "type": "Flood",
+        "severity": "Extreme",
+        "description": "Severe flooding in Guwahati after Brahmaputra river overflowed.",
+        "affected_villages": [
+          "Kamrup",
+          "Dispur",
+          "Uzan Bazar"
+        ],
+        "casualties": 0,
+        "displaced": 300000
+      },
+      {
+        "year": 2017,
+        "date": "2017-08-15",
+        "type": "Flood",
+        "severity": "High",
+        "description": "Brahmaputra flooding after continuous monsoon rainfall.",
+        "affected_villages": [
+          "Kamrup Metropolitan"
+        ],
+        "casualties": 0,
+        "displaced": 100000
+      }
+    ],
+    "cloudbursts": [
+      {
+        "year": 2019,
+        "date": "2019-07-08",
+        "type": "Cloudburst",
+        "severity": "Extreme",
+        "description": "Cloudburst over Guwahati recorded 350mm rainfall in 24 hours.",
+        "location": "Guwahati urban area",
+        "rainfall_mm": 350
+      }
+    ]
+  }
+}

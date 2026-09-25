@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Suraksha - Multi-Hazard Disaster Risk Assessment</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-content">
+                <h1>🛡️ Project Suraksha</h1>
+                <p class="subtitle">Multi-Hazard Disaster Risk Assessment for Vadodara District</p>
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="total-villages">680</span>
+                        <span class="stat-label">Villages Monitored</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="tier-1-count">0</span>
+                        <span class="stat-label">Tier 1 (Critical)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="tier-2-count">0</span>
+                        <span class="stat-label">Tier 2 (High)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="active-alerts">0</span>
+                        <span class="stat-label">Active Alerts</span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <nav class="app-nav">
+            <button class="nav-btn active" data-page="home">Home</button>
+            <button class="nav-btn" data-page="village">Village Report</button>
+            <button class="nav-btn" data-page="map">Risk Map</button>
+            <button class="nav-btn" data-page="alerts">Live Alerts</button>
+            <button class="nav-btn" data-page="help">Help</button>
+        </nav>
+
+        <main class="app-content">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="search-section">
+                    <h2>Search Village Risk Assessment</h2>
+                    <div class="search-box">
+                        <input type="text" id="village-search" placeholder="Enter village name (e.g., Alampura, Kanabha)..." autocomplete="off">
+                        <button id="search-btn">Search</button>
+                    </div>
+                </div>
+
+                <div id="search-result" class="search-result"></div>
+
+                <div class="quick-stats">
+                    <h3>Risk Distribution</h3>
+                    <div class="stats-grid" id="stats-grid">
+                        <div class="stat-card critical">
+                            <div class="stat-icon">🔴</div>
+                            <div class="stat-value" id="stat-tier-1">0</div>
+                            <div class="stat-label">Tier 1 - Immediate Evacuation</div>
+                        </div>
+                        <div class="stat-card high">
+                            <div class="stat-icon">🟠</div>
+                            <div class="stat-value" id="stat-tier-2">0</div>
+                            <div class="stat-label">Tier 2 - Relocation Planning</div>
+                        </div>
+                        <div class="stat-card medium">
+                            <div class="stat-icon">🟡</div>
+                            <div class="stat-value" id="stat-tier-3">0</div>
+                            <div class="stat-label">Tier 3 - Mitigation Measures</div>
+                        </div>
+                        <div class="stat-card low">
+                            <div class="stat-icon">🟢</div>
+                            <div class="stat-value" id="stat-tier-4">0</div>
+                            <div class="stat-label">Tier 4 - Monitor Only</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Village Page -->
+            <section id="village" class="page">
+                <div class="search-section">
+                    <h2>Village Risk Report</h2>
+                    <div class="search-box">
+                        <input type="text" id="village-search-v2" placeholder="Enter village name..." autocomplete="off">
+                        <button id="search-btn-v2">Get Report</button>
+                    </div>
+                </div>
+                <div id="village-report" class="village-report"></div>
+            </section>
+
+            <!-- Map Page -->
+            <section id="map" class="page">
+                <h2>Interactive Risk Map</h2>
+                <div id="map-container">
+                    <iframe id="risk-map-iframe" src="/map/geojson" width="100%" height="600px" style="border:1px solid #ccc;"></iframe>
+                </div>
+            </section>
+
+            <!-- Alerts Page -->
+            <section id="alerts" class="page">
+                <h2>Live Alerts</h2>
+                <div id="alerts-container">
+                    <p>Loading alerts...</p>
+                </div>
+            </section>
+
+            <!-- Help Page -->
+            <section id="help" class="page">
+                <h2>API Help & Documentation</h2>
+                <div id="help-content">
+                    <p>Loading help documentation...</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Project Suraksha (SIH26191) | Multi-Hazard Disaster Risk Assessment System</p>
+            <p>Powered by TensorFlow, FastAPI, and Open-Meteo</p>
+        </footer>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
